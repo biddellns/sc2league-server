@@ -36,13 +36,6 @@ ADD manage.py /manage.py
 RUN mkdir /config
 RUN mkdir /src
 ADD config/ /config/
-#ADD sc2league-server/ src/
-RUN pip install --upgrade pip
-RUN pip install -r /requirements.txt
 
-#ENV PYTHONUNBUFFERED 1
-#RUN mkdir /config
-#ADD /config/requirements.pip /config/
-#RUN pip install -r /config/requirements.pip
-#RUN mkdir /src;
-#WORKDIR /src
+COPY entrypoint.sh /
+ENTRYPOINT ["/entrypoint.sh"]
