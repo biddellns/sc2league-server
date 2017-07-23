@@ -1,5 +1,7 @@
 FROM python:3.5-alpine
 
+ENV PYTHONUNBUFFERED 1
+
 ADD requirements.txt /requirements.txt
 
 
@@ -26,7 +28,8 @@ RUN apk add --no-cache --virtual .build-deps \
     	)" \
     	&& apk add --virtual .rundeps $runDeps \
     	&& apk del .build-deps	 
-        
+
+RUN apk add --no-cache bash        
 
 ADD manage.py /manage.py
 

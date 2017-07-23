@@ -11,16 +11,25 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import random
+
+from envparse import env
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# Borrowed from the folks at LessPass (https://github.com/lesspass/backend)
+def get_secret_key(secret_key):
+    if not secret_key:
+        return "".join([random.choice("abcdefghijklmnopqrstuvwxyz0123456789!@#$^&*(-_=+)") for i in range(50)])
+    return secret_key
+
+
+SECRET_KEY = env('SECRET_KEY', preprocessor=get_secret_key, default=None)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
