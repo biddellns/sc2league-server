@@ -12,8 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 import random
-
-from envparse import env
+from envparse import env 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -85,12 +84,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ["DB_NAME"],
-        'USER': os.environ["DB_USER"],
-        'PASSWORD': os.environ["DB_USER_PW"],
-        'HOST': os.environ["DB_HOST"],
-        'PORT': os.environ["DB_PORT"],
+        'ENGINE': env('DJANGO_DB_ENGINE', default='django.db.backends.postgresql_psycopg2'),
+        'NAME': env('DB_NAME', default='postgres'),
+        'USER': env('DB_USER', default='postgres'),
+        'PASSWORD': env('DB_USER_PW', default=''),
+        'HOST': env('DB_HOST', default='db'),
+        'PORT': env('DB_PORT', default=5432),
     }
 }
 
@@ -133,6 +132,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'www', 'static')
 # Settings for DRF
 
 REST_FRAMEWORK = {
