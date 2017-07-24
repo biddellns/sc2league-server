@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#while ! nc -z db 5432; do sleep 3; done
+while ! nc -z db 5432; do sleep 3; done
 
 python manage.py makemigrations
 python manage.py migrate
