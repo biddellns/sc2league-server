@@ -15,7 +15,7 @@ services:
     expose:
       - "8000"
   nginx:
-    image: nginx:latest
+    build: ./config/nginx/
     volumes:
       - ./config/nginx/:/etc/nginx/conf.d/
     ports:
