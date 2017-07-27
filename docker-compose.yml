@@ -1,0 +1,25 @@
+version: "3.3"
+services:
+  db:
+    restart: always
+    image: postgres:latest
+    container_name: db01
+  web:
+    restart: always
+    build: .
+    container_name: django01
+    links:
+      - db
+    volumes:
+      - ./src:/src
+    expose:
+      - "8000"
+  nginx:
+    build: ./config/nginx/
+    volumes:
+      - ./config/nginx/:/etc/nginx/conf.d/
+    ports:
+      - "80:80"
+      - "443:443"
+    links:
+      - web
