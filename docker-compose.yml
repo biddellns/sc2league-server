@@ -12,14 +12,19 @@ services:
       - db
     volumes:
       - ./src:/src
+      - static:/var/www/static
     expose:
       - "8000"
   nginx:
     build: ./config/nginx/
     volumes:
       - ./config/nginx/:/etc/nginx/conf.d/
+      - static:/static
     ports:
       - "80:80"
       - "443:443"
     links:
       - web
+
+volumes:
+  static: 
