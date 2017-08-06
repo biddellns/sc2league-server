@@ -132,7 +132,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'www', 'static')
+STATIC_ROOT = '/var/www/static/' #os.path.join(BASE_DIR, 'www', 'static')
 # Settings for DRF
 
 REST_FRAMEWORK = {
