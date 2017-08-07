@@ -1,3 +1,5 @@
+from setuptools import setup
+
 setup(
     name='sc2league-server',
     version='0.0.1',
