@@ -28,7 +28,7 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
 
 script:
-  - tox -e $TOX_ENV
+  - tox -e ${TOX_ENV}
   - sh tox_script.sh
 
 install:
