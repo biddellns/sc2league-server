@@ -2,7 +2,7 @@ setup(
     name='sc2league-server',
     version='0.0.1',
     author='Nic Kohonski',
-    author=email='cybercoder91@aol.com',
+    author_email='cybercoder91@aol.com',
     url='https://gitbug.com/biddellns/sc2league-server',
     packages=[],
     license='GPL-3.0',
