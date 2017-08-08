@@ -36,4 +36,5 @@ after_success:
   coveralls
 
 install:
-  - pip install tox coveralls
+  - pip install tox
+  - pip install coveralls
