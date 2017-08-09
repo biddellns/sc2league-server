@@ -2,7 +2,7 @@ FROM python:3.5-alpine
 
 ENV PYTHONUNBUFFERED 1
 
-ADD requirements.txt /requirements.txt
+COPY requirements.txt /requirements.txt
 
 
 RUN apk add --no-cache --virtual .build-deps \
@@ -31,11 +31,12 @@ RUN apk add --no-cache --virtual .build-deps \
 
 RUN apk add --no-cache bash        
 
-ADD manage.py /manage.py
+COPY manage.py /manage.py
 
 RUN mkdir /config
 RUN mkdir /src
-ADD config/ /config/
+COPY config/ /config/
+COPY .coveragerc /.coveragerc
 
 COPY entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
