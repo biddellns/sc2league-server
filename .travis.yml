@@ -30,12 +30,12 @@ before_install:
 
 script:
   - tox -e ${TOX_ENV}
-  - sh tox_script.sh
+  - sh tests/tox_script.sh
 
 after_success:
   codecov
 
 install:
   - pip install tox
-  - pip install coveralls
+  - pip install coverage
   - pip install codecov
