@@ -33,8 +33,9 @@ script:
   - sh tox_script.sh
 
 after_success:
-  coveralls
+  codecov
 
 install:
   - pip install tox
   - pip install coveralls
+  - pip install codecov

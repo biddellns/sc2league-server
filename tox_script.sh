@@ -8,4 +8,3 @@ sleep 12
 sudo docker exec django01 python manage.py test
 
 sudo docker exec django01 coverage run --source='.' manage.py test
-coveralls
