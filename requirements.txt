@@ -8,3 +8,4 @@ envparse==0.2.0
 
 # Tox
 pep8==1.7.0
+coverage==4.4.1
