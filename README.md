@@ -1,5 +1,5 @@
 # [Starcraft 2 League - Server](www.nicbiddell.com/litsl/)
-[![Master](https://travis-ci.org/biddellns/sc2league-server.svg?branch=master)](https://travis-ci.org/biddellns/sc2league-server) 
+[![Master](https://travis-ci.org/biddellns/sc2league-server.svg?branch=master)](https://travis-ci.org/biddellns/sc2league-server) [![codecov](https://codecov.io/gh/biddellns/sc2league-server/branch/master/graph/badge.svg)](https://codecov.io/gh/biddellns/sc2league-server) 
 
 REST API for part manage a SC2 league
 
