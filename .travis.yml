@@ -29,8 +29,11 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
 
 script:
-  - tox -e ${TOX_ENV}
-  - sh tox_script.sh
+  - sh tests/tox_script.sh
+
+after_success:
+  codecov
 
 install:
-  - pip install tox
+  - pip install coverage
+  - pip install codecov
