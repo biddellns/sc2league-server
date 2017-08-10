@@ -1,3 +1,0 @@
-[run]
-include = sc2league-server
-omit = *migrations*, *tests*
