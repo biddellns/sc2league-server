@@ -7,7 +7,7 @@ sleep 12
 # Open Django container to run tests
 sudo docker exec django01 python manage.py test
 
-sudo docker exec django01 coverage run --source='.' manage.py test
+sudo docker exec django01 coverage run --source='./config' manage.py test
 
 # Create report
 coverage report
