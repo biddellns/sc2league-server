@@ -31,7 +31,7 @@ RUN apk add --no-cache --virtual .build-deps \
     	&& apk add --virtual .rundeps $runDeps \
     	&& apk del .build-deps	 
 
-RUN apk add --no-cache bash        
+RUN apk add --no-cache bash curl 
 
 COPY entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
