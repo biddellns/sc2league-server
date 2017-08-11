@@ -17,7 +17,6 @@ services:
     links:
       - db
     volumes:
-      - ./tests:/tests
       - static:/var/www/static
     expose:
       - "8000"
