@@ -10,3 +10,5 @@ sudo docker exec django01 python manage.py test
 sudo docker exec django01 coverage run --source='sc2league_server/' manage.py test sc2league_server/
 
 sudo docker exec django01 coverage xml
+
+sudo docker exec django01 mv coverage.xml tests/
