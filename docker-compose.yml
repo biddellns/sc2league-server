@@ -13,6 +13,7 @@ services:
       - db
     volumes:
       - ./src:/src
+      - ./.coverage:./.coverage
       - static:/var/www/static
     expose:
       - "8000"
