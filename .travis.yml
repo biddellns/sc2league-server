@@ -28,7 +28,7 @@ script:
   - sh tests/base_script.sh
 
 after_success:
-  - sh tests/codecov.sh
+  - codecov
 
 install:
   - pip install coverage
