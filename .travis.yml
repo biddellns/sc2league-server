@@ -10,17 +10,14 @@ python: 3.5
 env:
   - DOCKER_ENGINE_VERSION=17.06.0~ce-0
     DOCKER_COMPOSE_VERSION=1.14.0
-    TOX_ENV=py35
 
 branches:
   only:
-    - /.*/
+    - develop
+    - master
 
 before_install:
-  - sudo sh -c 'echo "deb https://apt.dockerproject.org/repo ubuntu-precise main" > /etc/apt/sources.list.d/docker.list'
-  - sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
   - sudo apt-get update
-  - sudo apt-key update
   - sudo apt-get --force-yes -qqy -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" install docker-ce
   - sudo rm /usr/local/bin/docker-compose
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
@@ -28,8 +25,11 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
 
 script:
-  - tox -e ${TOX_ENV}
-  - sh tox_script.sh
+  - sh tests/base_script.sh
+
+after_success:
+  - codecov
 
 install:
-  - pip install tox
+  - pip install coverage
+  - pip install codecov

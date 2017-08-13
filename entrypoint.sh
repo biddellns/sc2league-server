@@ -2,6 +2,7 @@
 
 while ! nc -z db 5432; do sleep 3; done
 
+cd /application/
 python manage.py makemigrations
 python manage.py migrate
 python manage.py collectstatic --clear --no-input
