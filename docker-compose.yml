@@ -6,6 +6,7 @@ services:
     container_name: db01
 
   web:
+    image: kohonski/sc2league-server_backend
     restart: always
     build: .
     container_name: django01
@@ -18,6 +19,7 @@ services:
       - "8000"
 
   nginx:
+    image: kohonski/sc2league-server_nginx
     build: ./config/nginx/
     volumes:
       - ./config/nginx/:/etc/nginx/conf.d/
