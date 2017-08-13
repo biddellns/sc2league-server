@@ -16,7 +16,16 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+from rest_framework import routers
+
+from sc2league_server.seasons import views as season_views
+
+
+router = routers.DefaultRouter()
+router.register('seasons', season_views.SeasonViewSet)
+
+
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url('^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

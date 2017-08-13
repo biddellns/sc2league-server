@@ -2,8 +2,10 @@ FROM python:3.5-alpine
 
 ENV PYTHONUNBUFFERED 1
 
-COPY requirements.txt /requirements.txt
+RUN mkdir application
+WORKDIR application
 
+COPY [".", "./"]
 
 RUN apk add --no-cache --virtual .build-deps \
 	gcc \
@@ -29,14 +31,7 @@ RUN apk add --no-cache --virtual .build-deps \
     	&& apk add --virtual .rundeps $runDeps \
     	&& apk del .build-deps	 
 
-RUN apk add --no-cache bash        
-
-COPY manage.py /manage.py
-
-RUN mkdir /config
-RUN mkdir /src
-COPY config/ /config/
-COPY .coveragerc /.coveragerc
+RUN apk add --no-cache bash curl 
 
 COPY entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
