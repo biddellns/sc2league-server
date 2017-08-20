@@ -29,6 +29,8 @@ script:
 
 after_success:
   - codecov
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker-compose push
 
 install:
   - pip install coverage
