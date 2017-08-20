@@ -1,13 +1,11 @@
 version: "3.3"
 services:
   db:
-    restart: always
     image: postgres:latest
     container_name: db01
 
   web:
     image: kohonski/sc2league-server_backend
-    restart: always
     build: .
     container_name: django01
     links:
