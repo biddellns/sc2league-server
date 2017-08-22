@@ -5,10 +5,10 @@ services:
     image: postgres:latest
     container_name: db01
 
-  web:
+  api:
     restart: always
     image: kohonski/sc2league-server_backend
-    container_name: django01
+    container_name: api
     links:
       - db
     volumes:
@@ -19,6 +19,7 @@ services:
   nginx:
     restart: always
     image: kohonski/sc2league-server_nginx
+    container_name: nginx
     volumes:
       - ./config/nginx/:/etc/nginx/conf.d/
       - static:/static
@@ -26,7 +27,7 @@ services:
       - "80:80"
       - "443:443"
     links:
-      - web
+      - api
 
 volumes:
   static: 
