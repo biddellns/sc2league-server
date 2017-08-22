@@ -1,26 +1,27 @@
 version: "3.3"
 services:
   db:
+    restart: always
     image: postgres:latest
     container_name: db01
 
   api:
+    restart: always
     image: kohonski/sc2league-server_backend
-    build: .
     container_name: api
     links:
       - db
     volumes:
-      - ./tests:/application/tests/
       - static:/var/www/static
     expose:
       - "8000"
 
   nginx:
+    restart: always
     image: kohonski/sc2league-server_nginx
     container_name: nginx
-    build: ./config/nginx/
     volumes:
+      - ./config/nginx/:/etc/nginx/conf.d/
       - static:/static
     ports:
       - "80:80"
