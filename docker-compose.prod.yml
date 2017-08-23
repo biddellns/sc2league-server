@@ -21,7 +21,6 @@ services:
     image: kohonski/sc2league-server_nginx
     container_name: nginx
     volumes:
-      - ./config/nginx/:/etc/nginx/conf.d/
       - static:/static
     ports:
       - "80:80"
