@@ -11,6 +11,7 @@ def get_ssl_context(environ):
             'domain': domain,
             'dhparam': False,
             'ssl_trusted_certificate': False
+            'lets_encrypt': False
             }
 
     dhparam = os.path.join('/certificates', domain + '.dhparam.pem')
@@ -53,6 +54,7 @@ def local_server():
 def lets_encrypt_server():
     context = {
             'domain': os.environ['DOMAIN']
+            'lets_encrypt': True
             }
 
     jinja_template = Template(open('/api.conf.j2').read())

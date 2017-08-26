@@ -14,8 +14,24 @@ server {
   listen 443 ssl http2 default_server;
   listen [::]:433 ssl http2 default_server;
 
-{% if dhparam %}
-	ssl_dhparam /etc/ssl/certs/dhparam.pem;
+{% if lets_encrypt %}
+	ssl_certificate /etc/letsencrypt/live/{{ domain }}/fullchain.pem;
+	ssl_certificate_key /etc/letsencrypt/live/{{ domain }}/privkey.pem;
+{% else %}
+	ssl_certificate /etc/ssl/certs/certificate.crt;
+	ssl_certificate_key /etc/ssl/private/private.key;
+{% endif %}
+	
+	ssl_session_timeout 30m;
+  ssl_session_cache shared:SSL:20m;
+  ssl_session_tickets off;
+
+{% if lets_encrypt %}
+	ssl_dhparam /etc/letsencrypt/live/{{ domain }}/dhparam.pem;
+{% else %}
+	{% if dhparam %}
+		ssl_dhparam /etc/ssl/certs/dhparam.pem;
+	{% endif %}
 {% endif %}
 
 	ssl_protocols TLSv1.2;
@@ -23,10 +39,16 @@ server {
 	
 	ssl_perfer_server_ciphers on;
 
-{% ssl_trusted_certificates %}
-	ssl_stapling on;
-  ssl_stapling_verify on;
-  ssl_trusted_certificate /etc/ssl/certs/ca.crt;
+{% if lets_encrypt %}
+	ssl_stapling on;'
+	ssl_stapling_verify on;
+	ssl_trusted_certificate /etc/letsencrypt/live/{{ domain }}/fullchain.pem;
+{% else %}
+	{% if ssl_trusted_certificates %}
+		ssl_stapling on;
+	  ssl_stapling_verify on;
+  	ssl_trusted_certificate /etc/ssl/certs/ca.crt;
+	{% endif %}
 {% endif %}
 
   location /static {
