@@ -63,7 +63,7 @@ def lets_encrypt_server():
 		f.write(jinja_template.render(context))
 
 if __name__ == "__main__":
-	use_letsencrypt = os.environ.get("DOCKER_NGINX_LETSENCRYPT")
+	use_letsencrypt = os.environ.get("USE_LETSENCRYPT")
 
 	if use_letsencrypt is not None and use_letsencrypt == 'T':
 		lets_encrypt_server()

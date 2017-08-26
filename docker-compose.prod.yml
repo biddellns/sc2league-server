@@ -21,8 +21,10 @@ services:
     image: kohonski/sc2league-server_nginx
     container_name: nginx
     environment:
-      - DOCKER_NGINX_LETSENCRYPT=T
+      - USE_LETSENCRYPT=T
+      - DOMAIN=${DOMAIN}
     volumes:
+      - ./letsencrypt:/etc/letsencrypt
       - static:/static
     ports:
       - "80:80"
