@@ -40,7 +40,7 @@ server {
 	ssl_prefer_server_ciphers on;
 
 {% if lets_encrypt %}
-	ssl_stapling on;'
+	ssl_stapling on;
 	ssl_stapling_verify on;
 	ssl_trusted_certificate /etc/letsencrypt/live/{{ domain }}/fullchain.pem;
 {% else %}
