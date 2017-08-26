@@ -1,4 +1,4 @@
-FROM nginx:stable
+FROM nginx:stable-alpine
 
 RUN apk update && apk add \
     python3 \
@@ -16,9 +16,18 @@ COPY conf.d/nginx.conf /etc/nginx/nginx.conf
 COPY conf.d/mime.types /etc/nginx/mime.types
 
 RUN rm /etc/nginx/conf.d/default.conf
-COPY api.conf /etc/nginx/conf.d/
+
+RUN mkdir /utilities
+COPY utilities/ /utilities
+COPY api.conf.j2 /
+COPY install.py /
+
+RUN mkdir /certificates
+VOLUME ["/certificates"]
 
 COPY entrypoint.sh /
+RUN chmod 755 /entrypoint.sh
+
 ENTRYPOINT ["/entrypoint.sh"]
 
 CMD ["nginx", "-g", "daemon off;"]

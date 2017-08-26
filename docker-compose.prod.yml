@@ -20,6 +20,8 @@ services:
     restart: always
     image: kohonski/sc2league-server_nginx
     container_name: nginx
+    environment:
+      - DOCKER_NGINX_LETSENCRYPT=T
     volumes:
       - static:/static
     ports:

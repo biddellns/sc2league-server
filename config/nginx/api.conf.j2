@@ -30,14 +30,14 @@ server {
 	ssl_dhparam /etc/letsencrypt/live/{{ domain }}/dhparam.pem;
 {% else %}
 	{% if dhparam %}
-		ssl_dhparam /etc/ssl/certs/dhparam.pem;
+	ssl_dhparam /etc/ssl/certs/dhparam.pem;
 	{% endif %}
 {% endif %}
 
 	ssl_protocols TLSv1.2;
   ssl_ciphers 'ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256';
 	
-	ssl_perfer_server_ciphers on;
+	ssl_prefer_server_ciphers on;
 
 {% if lets_encrypt %}
 	ssl_stapling on;'
@@ -45,7 +45,7 @@ server {
 	ssl_trusted_certificate /etc/letsencrypt/live/{{ domain }}/fullchain.pem;
 {% else %}
 	{% if ssl_trusted_certificates %}
-		ssl_stapling on;
+    ssl_stapling on;
 	  ssl_stapling_verify on;
   	ssl_trusted_certificate /etc/ssl/certs/ca.crt;
 	{% endif %}

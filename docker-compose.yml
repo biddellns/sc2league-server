@@ -19,8 +19,12 @@ services:
   nginx:
     image: kohonski/sc2league-server_nginx
     container_name: nginx
+    environment:
+      - DOCKER_NGINX_LETSENCRYPT=F
+      - DOMAIN=localhost
     build: ./config/nginx/
     volumes:
+      - ./config/nginx/ssl:/certificates
       - static:/static
     ports:
       - "80:80"
