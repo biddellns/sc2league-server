@@ -3,7 +3,7 @@ import subprocess
 
 from jinja2 import Template
 
-from utilities import copy, template
+from utilities.files import copy, template
 
 def get_ssl_context(environ):
     domain = environ['DOMAIN']
