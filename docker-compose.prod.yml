@@ -1,33 +1,33 @@
 version: "3.3"
 services:
   db:
+    restart: always
     image: postgres:latest
     container_name: db01
 
   api:
+    restart: always
     image: kohonski/sc2league-server_backend
-    build: .
     container_name: api
     environment:
-      - DOMAIN=localhost
-      - DJANGO_SETTINGS_MODULE=config.settings.local
+      - DOMAIN
+      - DJANGO_SETTINGS_MODULE=config.settings.production
     links:
       - db
     volumes:
-      - ./tests:/application/tests/
       - static:/var/www/static
     expose:
       - "8000"
 
   nginx:
+    restart: always
     image: kohonski/sc2league-server_nginx
     container_name: nginx
     environment:
-      - USE_LETSENCRYPT=F
-      - DOMAIN=localhost
-    build: ./config/nginx/
+      - USE_LETSENCRYPT=T
+      - DOMAIN
     volumes:
-      - ./config/nginx/ssl:/certificates
+      - ./letsencrypt:/etc/letsencrypt
       - static:/static
     ports:
       - "80:80"
