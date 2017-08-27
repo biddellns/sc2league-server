@@ -9,6 +9,9 @@ services:
     restart: always
     image: kohonski/sc2league-server_backend
     container_name: api
+    environment:
+      - DOMAIN
+      - DJANGO_SETTINGS_MODULE=config.settings.production
     links:
       - db
     volumes:
@@ -20,7 +23,11 @@ services:
     restart: always
     image: kohonski/sc2league-server_nginx
     container_name: nginx
+    environment:
+      - USE_LETSENCRYPT=T
+      - DOMAIN
     volumes:
+      - ./letsencrypt:/etc/letsencrypt
       - static:/static
     ports:
       - "80:80"
