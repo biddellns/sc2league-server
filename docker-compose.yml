@@ -8,6 +8,9 @@ services:
     image: kohonski/sc2league-server_backend
     build: .
     container_name: api
+    environment:
+      - DOMAIN=localhost
+      - DJANGO_SETTINGS_MODULE=config.settings.local
     links:
       - db
     volumes:
@@ -19,8 +22,12 @@ services:
   nginx:
     image: kohonski/sc2league-server_nginx
     container_name: nginx
+    environment:
+      - USE_LETSENCRYPT=F
+      - DOMAIN=localhost
     build: ./config/nginx/
     volumes:
+      - ./config/nginx/ssl:/certificates
       - static:/static
     ports:
       - "80:80"
