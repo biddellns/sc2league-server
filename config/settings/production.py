@@ -1,9 +1,11 @@
 from .base import *
-
+import os
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['.' + os.environ['DOMAIN']]
+
+base_domain = '.' + os.environ['DOMAIN']
+ALLOWED_HOSTS = [base_domain,]
 
 # Extra security settings
 CSRF_COOKIE_SECURE = True

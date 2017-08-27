@@ -8,6 +8,9 @@ services:
     image: kohonski/sc2league-server_backend
     build: .
     container_name: api
+    environment:
+      - DOMAIN=localhost
+      - DJANGO_SETTINGS_MODULE=config.settings.local
     links:
       - db
     volumes:
