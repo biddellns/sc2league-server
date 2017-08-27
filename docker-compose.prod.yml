@@ -22,7 +22,8 @@ services:
     container_name: nginx
     environment:
       - USE_LETSENCRYPT=T
-      - DOMAIN=${DOMAIN}
+      - DOMAIN
+      - DJANGO_SETTINGS_MODULE=config.settings.production
     volumes:
       - ./letsencrypt:/etc/letsencrypt
       - static:/static
