@@ -23,6 +23,7 @@ from sc2league_server.seasons import views as season_views
 
 router = routers.DefaultRouter()
 router.register('seasons', season_views.SeasonViewSet)
+router.register('leagues', season_views.LeagueViewSet)
 
 
 urlpatterns = [
