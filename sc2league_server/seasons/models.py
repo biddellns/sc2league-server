@@ -5,7 +5,7 @@ import uuid as uuid_lib
 # Create your models here.
 
 class League(models.Model):
-    name = models.CharField(max_length=75)
+    name = models.SlugField(max_length=75, unique=True)
 
     def __str__(self):
         return self.name
