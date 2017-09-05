@@ -8,9 +8,11 @@ class LeagueSerializer(serializers.ModelSerializer):
 		read_only=True,
 		view_name='season-detail')
 
+    abbreviation = serializers.CharField(min_length=3, max_length=7)
+
     class Meta:
         model = League
-        fields = ('id', 'name', 'seasons')
+        fields = ('id', 'name', 'abbreviation', 'seasons')
 
 class SeasonSerializer(serializers.ModelSerializer):
     class Meta:
