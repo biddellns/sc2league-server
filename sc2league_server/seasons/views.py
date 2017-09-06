@@ -12,16 +12,17 @@ class LeagueViewSet(viewsets.ModelViewSet):
     serializer_class = LeagueSerializer
 
 class SeasonViewSet(viewsets.ModelViewSet):
-    queryset = Season.objects.all()
     serializer_class = SeasonSerializer
     
-    def list(self, request):
+
+    def get_queryset(self):
         queryset = Season.objects.all()
 
-        league_id = request.query_params.get('league', None)
+        league_id = self.request.query_params.get('league', None)
 
         if league_id is not None:
             queryset = Season.objects.filter(league=league_id)
+        else:
+            queryset = Season.objects.all()
 
-        serializer = SeasonSerializer(queryset, many=True)
-        return Response(serializer.data)
+        return queryset

@@ -22,3 +22,6 @@ class Season(models.Model):
 
     def __str__(self):
         return "Season #" + str(self.season_number)
+
+    class Meta:
+        unique_together = ("league", "season_number")
