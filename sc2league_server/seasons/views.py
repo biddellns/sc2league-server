@@ -3,13 +3,9 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.response import Response
 
-from .models import Season, League
-from .serializers import SeasonSerializer, LeagueSerializer
+from .models import Season
+from .serializers import SeasonSerializer 
 # Create your views here.
-
-class LeagueViewSet(viewsets.ModelViewSet):
-    queryset = League.objects.all()
-    serializer_class = LeagueSerializer
 
 class SeasonViewSet(viewsets.ModelViewSet):
     serializer_class = SeasonSerializer

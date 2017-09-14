@@ -19,11 +19,11 @@ from django.contrib import admin
 from rest_framework import routers
 
 from sc2league_server.seasons import views as season_views
-
+from sc2league_server.leagues import views as league_views
 
 router = routers.DefaultRouter()
 router.register('seasons', season_views.SeasonViewSet, base_name='season')
-router.register('leagues', season_views.LeagueViewSet)
+router.register('leagues', league_views.LeagueViewSet)
 
 
 urlpatterns = [

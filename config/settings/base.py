@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'sc2league_server.seasons',
+    'sc2league_server.leagues',
 ]
 
 MIDDLEWARE = [
