@@ -16,7 +16,7 @@ class LeagueModelTest(TestCase):
         second_league.save()
 
         saved_leagues = League.objects.all()
-        
+
         self.assertEqual(saved_leagues.count(), 2)
 
         first_saved_league = saved_leagues[0]

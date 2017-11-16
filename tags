@@ -1,0 +1,115 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ALLOWED_HOSTS	config/settings/base.py	/^ALLOWED_HOSTS = []$/;"	v
+ALLOWED_HOSTS	config/settings/production.py	/^ALLOWED_HOSTS = [base_domain,]$/;"	v
+AUTH_PASSWORD_VALIDATORS	config/settings/base.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	v
+BASE_DIR	config/settings/base.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	v
+BracketRound	sc2league_server/seasons/models.py	/^class BracketRound(Round):$/;"	c
+CSRF_COOKIE_SECURE	config/settings/production.py	/^CSRF_COOKIE_SECURE = True$/;"	v
+DATABASES	config/settings/base.py	/^DATABASES = {$/;"	v
+DEBUG	config/settings/base.py	/^DEBUG = True$/;"	v
+DEBUG	config/settings/production.py	/^DEBUG = False$/;"	v
+GroupRound	sc2league_server/seasons/models.py	/^class GroupRound(Round):$/;"	c
+INSTALLED_APPS	config/settings/base.py	/^INSTALLED_APPS = [$/;"	v
+LANGUAGE_CODE	config/settings/base.py	/^LANGUAGE_CODE = 'en-us'$/;"	v
+League	sc2league_server/leagues/models.py	/^class League(models.Model):$/;"	c
+LeagueModelTest	sc2league_server/leagues/tests.py	/^class LeagueModelTest(TestCase):$/;"	c
+LeagueSerializer	sc2league_server/leagues/serializers.py	/^class LeagueSerializer(serializers.ModelSerializer):$/;"	c
+LeagueViewSet	sc2league_server/leagues/views.py	/^class LeagueViewSet(viewsets.ModelViewSet):$/;"	c
+LeaguesConfig	sc2league_server/leagues/apps.py	/^class LeaguesConfig(AppConfig):$/;"	c
+MIDDLEWARE	config/settings/base.py	/^MIDDLEWARE = [$/;"	v
+Meta	sc2league_server/leagues/serializers.py	/^    class Meta:$/;"	c	class:LeagueSerializer
+Meta	sc2league_server/seasons/models.py	/^    class Meta:$/;"	c	class:Season
+Meta	sc2league_server/seasons/serializers.py	/^    class Meta:$/;"	c	class:RoundSerializer
+Meta	sc2league_server/seasons/serializers.py	/^    class Meta:$/;"	c	class:SeasonSerializer
+Migration	sc2league_server/seasons/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	c
+REST_FRAMEWORK	config/settings/base.py	/^REST_FRAMEWORK = {$/;"	v
+ROOT_URLCONF	config/settings/base.py	/^ROOT_URLCONF = 'config.urls'$/;"	v
+Round	sc2league_server/seasons/models.py	/^class Round(models.Model):$/;"	c
+RoundSerializer	sc2league_server/seasons/serializers.py	/^class RoundSerializer(serializers.ModelSerializer):$/;"	c
+RoundViewSet	sc2league_server/seasons/views.py	/^class RoundViewSet(viewsets.ModelViewSet):$/;"	c
+SECRET_KEY	config/settings/base.py	/^SECRET_KEY = env('SECRET_KEY', preprocessor=get_secret_key, default=None)$/;"	v
+SESSION_COOKIE_SECURE	config/settings/production.py	/^SESSION_COOKIE_SECURE = True$/;"	v
+STATIC_ROOT	config/settings/base.py	/^STATIC_ROOT = '\/var\/www\/static\/' #os.path.join(BASE_DIR, 'www', 'static')$/;"	v
+STATIC_URL	config/settings/base.py	/^STATIC_URL = '\/static\/'$/;"	v
+Season	sc2league_server/seasons/models.py	/^class Season(models.Model):$/;"	c
+SeasonModelTest	sc2league_server/seasons/tests.py	/^class SeasonModelTest(TestCase):$/;"	c
+SeasonSerializer	sc2league_server/seasons/serializers.py	/^class SeasonSerializer(serializers.ModelSerializer):$/;"	c
+SeasonViewSet	sc2league_server/seasons/views.py	/^class SeasonViewSet(viewsets.ModelViewSet):$/;"	c
+SeasonsConfig	sc2league_server/seasons/apps.py	/^class SeasonsConfig(AppConfig):$/;"	c
+TEMPLATES	config/settings/base.py	/^TEMPLATES = [$/;"	v
+TIME_ZONE	config/settings/base.py	/^TIME_ZONE = 'UTC'$/;"	v
+USE_I18N	config/settings/base.py	/^USE_I18N = True$/;"	v
+USE_L10N	config/settings/base.py	/^USE_L10N = True$/;"	v
+USE_TZ	config/settings/base.py	/^USE_TZ = True$/;"	v
+WSGI_APPLICATION	config/settings/base.py	/^WSGI_APPLICATION = 'config.wsgi.application'$/;"	v
+X_FRAME_OPTIONS	config/settings/production.py	/^X_FRAME_OPTIONS = 'DENY'$/;"	v
+__str__	sc2league_server/leagues/models.py	/^    def __str__(self):$/;"	m	class:League	file:
+__str__	sc2league_server/seasons/models.py	/^    def __str__(self):$/;"	m	class:Season	file:
+abbreviation	sc2league_server/leagues/models.py	/^    abbreviation = models.CharField(max_length=7, unique=True, validators=[MinLengthValidator(3)])$/;"	v	class:League
+abbreviation	sc2league_server/leagues/serializers.py	/^    abbreviation = serializers.CharField(min_length=3, max_length=7)$/;"	v	class:LeagueSerializer
+application	config/wsgi.py	/^application = get_wsgi_application()$/;"	v
+author	setup.py	/^    author='Nic Kohonski',$/;"	v
+author_email	setup.py	/^    author_email='cybercoder91@aol.com',$/;"	v
+base_domain	config/settings/production.py	/^base_domain = '.' + os.environ['DOMAIN']$/;"	v
+classifiers	setup.py	/^    classifiers=[$/;"	v
+copy	config/nginx/utilities/files.py	/^def copy(source, destination, basename=None, mode='0755'):$/;"	f
+copy_certificates	config/nginx/utilities/ssl.py	/^def copy_certificates(certificates, destination='\/etc\/ssl', domain='test.com'):$/;"	f
+db_index	sc2league_server/seasons/models.py	/^            db_index=True,$/;"	v	class:Season
+default	sc2league_server/seasons/models.py	/^            default=uuid_lib.uuid4,$/;"	v	class:Season
+dependencies	sc2league_server/seasons/migrations/0001_initial.py	/^    dependencies = [$/;"	v	class:Migration
+editable	sc2league_server/seasons/models.py	/^            editable=False)$/;"	v	class:Season
+fields	sc2league_server/leagues/serializers.py	/^        fields = ('id', 'name', 'abbreviation', 'seasons')$/;"	v	class:LeagueSerializer.Meta
+fields	sc2league_server/seasons/migrations/0001_initial.py	/^            fields=[$/;"	v	class:Migration
+fields	sc2league_server/seasons/serializers.py	/^        fields = ('league', 'uuid', 'season_number')$/;"	v	class:SeasonSerializer.Meta
+fields	sc2league_server/seasons/serializers.py	/^        fields = ('season', 'num_players_in', 'num_players_advancing', 'state')$/;"	v	class:RoundSerializer.Meta
+find	config/nginx/utilities/files.py	/^def find(paths, patterns=None):$/;"	f
+get_certificates	config/nginx/install.py	/^def get_certificates(domain):$/;"	f
+get_queryset	sc2league_server/seasons/views.py	/^    def get_queryset(self):$/;"	m	class:RoundViewSet
+get_queryset	sc2league_server/seasons/views.py	/^    def get_queryset(self):$/;"	m	class:SeasonViewSet
+get_secret_key	config/settings/base.py	/^def get_secret_key(secret_key):$/;"	f
+get_ssl_context	config/nginx/install.py	/^def get_ssl_context(environ):$/;"	f
+initial	sc2league_server/seasons/migrations/0001_initial.py	/^    initial = True$/;"	v	class:Migration
+league	sc2league_server/seasons/models.py	/^    league = models.ForeignKey(League, related_name="seasons", null=True)$/;"	v	class:Season
+lets_encrypt_server	config/nginx/install.py	/^def lets_encrypt_server():$/;"	f
+license	setup.py	/^    license='GPL-3.0',$/;"	v
+local_server	config/nginx/install.py	/^def local_server():$/;"	f
+many	sc2league_server/leagues/serializers.py	/^		many=True,$/;"	v	class:LeagueSerializer
+model	sc2league_server/leagues/serializers.py	/^        model = League$/;"	v	class:LeagueSerializer.Meta
+model	sc2league_server/seasons/serializers.py	/^        model = Round$/;"	v	class:RoundSerializer.Meta
+model	sc2league_server/seasons/serializers.py	/^        model = Season$/;"	v	class:SeasonSerializer.Meta
+name	sc2league_server/leagues/apps.py	/^    name = 'sc2league_server.leagues'$/;"	v	class:LeaguesConfig
+name	sc2league_server/leagues/models.py	/^    name = models.CharField(max_length=75, unique=True)$/;"	v	class:League
+name	sc2league_server/seasons/apps.py	/^    name = 'sc2league_server.seasons'$/;"	v	class:SeasonsConfig
+name	sc2league_server/seasons/migrations/0001_initial.py	/^            name='Season',$/;"	v	class:Migration
+name	setup.py	/^    name='sc2league-server',$/;"	v
+num_players_advancing	sc2league_server/seasons/models.py	/^    num_players_advancing = models.IntegerField()$/;"	v	class:Round
+num_players_in	sc2league_server/seasons/models.py	/^    num_players_in = models.IntegerField()$/;"	v	class:Round
+operations	sc2league_server/seasons/migrations/0001_initial.py	/^    operations = [$/;"	v	class:Migration
+packages	setup.py	/^    packages=[],$/;"	v
+pattern_filter	config/nginx/utilities/files.py	/^def pattern_filter(file, patterns=None):$/;"	f
+queryset	sc2league_server/leagues/views.py	/^    queryset = League.objects.all()$/;"	v	class:LeagueViewSet
+read_only	sc2league_server/leagues/serializers.py	/^		read_only=True,$/;"	v	class:LeagueSerializer
+router	config/urls.py	/^router = routers.DefaultRouter()$/;"	v
+season	sc2league_server/seasons/models.py	/^    season = models.ForeignKey(Season, related_name="rounds", null=True)$/;"	v	class:Round
+season_number	sc2league_server/seasons/models.py	/^    season_number = models.IntegerField()$/;"	v	class:Season
+seasons	sc2league_server/leagues/serializers.py	/^    seasons = serializers.HyperlinkedRelatedField($/;"	v	class:LeagueSerializer
+serializer_class	sc2league_server/leagues/views.py	/^    serializer_class = LeagueSerializer$/;"	v	class:LeagueViewSet
+serializer_class	sc2league_server/seasons/views.py	/^    serializer_class = RoundSerializer$/;"	v	class:RoundViewSet
+serializer_class	sc2league_server/seasons/views.py	/^    serializer_class = SeasonSerializer$/;"	v	class:SeasonViewSet
+state	sc2league_server/seasons/models.py	/^    state = models.CharField(max_length=50)$/;"	v	class:Round
+template	config/nginx/utilities/files.py	/^def template(source, context, destination):$/;"	f
+test_saving_and_retrieving_items	sc2league_server/leagues/tests.py	/^    def test_saving_and_retrieving_items(self):$/;"	m	class:LeagueModelTest
+test_saving_and_retrieving_items	sc2league_server/seasons/tests.py	/^    def test_saving_and_retrieving_items(self):$/;"	m	class:SeasonModelTest
+unique_together	sc2league_server/seasons/models.py	/^        unique_together = ("league", "season_number")$/;"	v	class:Season.Meta
+url	setup.py	/^    url='https:\/\/gitbug.com\/biddellns\/sc2league-server',$/;"	v
+urlpatterns	config/urls.py	/^urlpatterns = [$/;"	v
+use_letsencrypt	config/nginx/install.py	/^	use_letsencrypt = os.environ.get("USE_LETSENCRYPT")$/;"	v
+uuid	sc2league_server/seasons/models.py	/^    uuid = models.UUIDField($/;"	v	class:Season
+version	setup.py	/^    version='0.0.1',$/;"	v
+view_name	sc2league_server/leagues/serializers.py	/^		view_name='season-detail')$/;"	v	class:LeagueSerializer
+zip_safe	setup.py	/^    zip_safe=False,$/;"	v

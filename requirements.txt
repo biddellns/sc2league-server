@@ -1,6 +1,7 @@
 coverage==4.4.1
 Django==1.11.1
 django-filter==1.0.4
+django-model-utils==3.0.0
 djangorestframework==3.6.3
 gunicorn==19.7.1
 Markdown==2.6.8

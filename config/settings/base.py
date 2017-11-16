@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'model_utils',
     'sc2league_server.seasons.apps.SeasonsConfig',
     'sc2league_server.leagues.apps.LeaguesConfig',
 ]
