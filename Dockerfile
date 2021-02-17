@@ -5,7 +5,7 @@ ENV PYTHONUNBUFFERED 1
 RUN mkdir application
 WORKDIR application
 
-COPY [".", "./"]
+COPY ["./requirements.txt", "./"]
 
 RUN apk add --no-cache --virtual .build-deps \
 	gcc \
@@ -34,4 +34,5 @@ RUN apk add --no-cache --virtual .build-deps \
 RUN apk add --no-cache bash curl 
 
 COPY entrypoint.sh /
+COPY [".", "./"]
 ENTRYPOINT ["/entrypoint.sh"]

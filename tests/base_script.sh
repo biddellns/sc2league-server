@@ -1,3 +1,5 @@
+set -e 
+
 # Create containers 
 sudo docker-compose up -d
 

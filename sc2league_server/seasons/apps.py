@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class SeasonsConfig(AppConfig):
-    name = 'seasons'
+    name = 'sc2league_server.seasons'
